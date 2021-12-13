@@ -7,6 +7,17 @@ describe('HelloWorld.vue', () => {
     const wrapper = shallowMount(HelloWorld, {
       props: { msg },
     });
+
     expect(wrapper.text()).toMatch(msg);
+  });
+  it('add fun', () => {
+    const wrapper = shallowMount(HelloWorld);
+    wrapper.find('button').trigger('click');
+    expect(wrapper.vm.count).toBe(1);
+  });
+  it('del fun', () => {
+    const wrapper = shallowMount(HelloWorld);
+    wrapper.vm.del();
+    expect(wrapper.vm.count).toBe(-1);
   });
 });
