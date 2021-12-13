@@ -10,6 +10,25 @@ https://juejin.cn/post/6856730547969622024
 # Jest 文档
 https://www.jestjs.cn/docs/using-matchers
 
+# 开发过程中遇到的问题
+## 报错：
+```
+SecurityError: localStorage is not available for opaque origins
+```
+
+## 报错：
+    [vue-test-utils]: window is undefined, vue-test-utils needs to be run in a browser environment.
+    You can run the tests in node using jsdom
+    See https://vue-test-utils.vuejs.org/guides/#browser-environment for more details.
+
+## 解决方案
+```
+testEnvironment:'jsdom',
+verbose: true,
+testURL: "http://localhost/",
+```
+参考资料：
+https://blog.csdn.net/haodawang/article/details/81290184
 
 
 # vue-jest
